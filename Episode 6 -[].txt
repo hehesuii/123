@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         // Removing the specified element by value from the array 
+         var arr = ["shift", "splice", "filter", "pop"];
+
+function func(ele) 
+{
+
+           //var arr = ["shift", "splice", "filter", "pop"];
+         
+for (var i = 0; i < arr.length; i++)
+ {
+
+    if (arr[i] === ele) 
+    {
+
+        var spliced = arr.splice(i, 1);
+        //var spliced = arr.splice(i, 2);
+        //splice is used to add or remove specific element from an array
+        //var spliced=arr.splice(2,2,"Wednesday") ;//will remove third and 4 elments amd add wednesday in that place
+
+        document.write("Removed element: " + spliced + "<br>");
+
+        document.write("Remaining elements: " + arr+ "<br>");
+
+    }
+}
+}
+func("splice");
+//func("filter");
+ // Check if an array contains specified value
+const colors = ['red', 'green', 'blue'];
+const result = colors.includes('blue');
+console.log(result); // true
+if(result==true)
+{
+    document.write("array contains specified value"+ "<br>");
+}
+else
+{
+    document.write("array does not contains specified value"+ "<br>");
+}
+//Empty an array
+while(arr.length > 0) {
+    arr.pop();
+}
+document.write("Empty array",+arr+ "<br>");
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>   
+</head>
+<body style="text-align: center;">
+    <form action="exp9Welcome.html" onsubmit="return validate()">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter Name">
+        <br><br>
+        <label for="number">Number</label>
+        <input type="number" id="number" placeholder="Enter Number">
+        <br><br>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter Email">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validate()
+        {
+            var flag = true;
+            // for name
+            var val = document.getElementById('name').value;
+            var exp = /^[A-Z]{1}/;
+            if(exp.test(val))
+            {
+                document.getElementById('name').style.border = "green 2px solid";
+            }
+            else
+            {
+                document.getElementById('name').style.border = "red 2px double";
+                alert("invalid input. Name should start with capital letter");
+                flag = false;
+            }
+
+            // for number
+            val = document.getElementById('number').value;
+            exp = /[0-9]{10}/;
+            if(exp.test(val))
+            {
+                document.getElementById('number').style.border = "green 2px solid";
+            }
+            else
+            {
+                document.getElementById('number').style.border = "red 2px solid";
+                flag = false;
+                alert("invalid input. Mobile number should be 10 digit");
+
+            }          
+
+
+            if(flag == true)
+            {
+                alert("Form submitted Successfully");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>	

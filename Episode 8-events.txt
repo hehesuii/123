@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+    <style>
+        div{
+            padding: 3px;
+            text-align: center;
+            border: 2px solid black;
+            display: inline-block;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div onmouseover="Hover()" id="hoverEvent">
+        Mouse Over Event
+    </div>
+    <br><br>
+    <div >
+        <input type="text" onfocus="Focus()" id="focusEvent">
+        on Focus Event
+    </div>
+
+    <script>
+        function Hover()
+        {
+            document.getElementById('hoverEvent').style.backgroundColor = "green";
+        }
+        
+        function Focus()
+        {
+            document.getElementById('focusEvent').style.backgroundColor = "green";
+        }
+    </script>
+</body>
+</html>

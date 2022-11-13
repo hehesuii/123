@@ -1,0 +1,31 @@
+--main code
+
+process(clk,rst)
+begin
+if rst ='1' then 
+q<="0000";
+elsifclk'event and clk='1' then
+case m is 
+when "00" => q <= d;
+when "01" => q <= q (2 downto0)& d(0);
+when "10" => q <= d (3) &q(3 downto 1);
+when others => q <="0000";
+end case; 
+end if; 
+end if;
+end process;
+
+--test bench
+
+rst<= '1'; 
+wait for 50 ns;
+rst<= '0' ;
+d <= "1010" ;
+m <= "00";
+wait for 100 ns;
+m <= "01";
+wait for 100 ns;
+m <= "10";
+wait for 100 ns;
+m <= "11";
+wait for 100 ns;

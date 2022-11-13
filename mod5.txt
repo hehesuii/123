@@ -1,0 +1,33 @@
+--main code
+
+process(reset,clk)
+begin
+if reset = '1' then
+count<="000";
+elsif
+clk'event and clk='1' then
+if count ="100" then
+count<="000";
+else
+ count<=count+'1';
+end if; 
+end if;
+end process ;
+q<= count;
+
+--test bench
+
+process
+--begin
+--clk<= '0';
+--wait for 25 ns;
+--clk<= '1';
+--wait for 25 ns;
+--end process;
+--tb : PROCESS
+--BEGIN
+-- Wait 100 ns for global reset to finish
+reset <= '1' ;
+wait for 20 ns;
+reset <='0' ;
+wait; 
